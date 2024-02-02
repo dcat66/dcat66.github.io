@@ -1,7 +1,161 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
 <body>
-<h1>PC S3</h1>
-<p>Charmaine's S3 Subjects here.</p>
+
+<h2><center>PC F3 Subjects</center></h2>
+<p><b><center>PCMS 2023-24</center></b></p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'Chinese')" id="defaultOpen">中文</button>
+  <button class="tablinks" onclick="openCity(event, 'English')">English</button>
+  <button class="tablinks" onclick="openCity(event, 'Maths')">Maths</button>
+  <button class="tablinks" onclick="openCity(event, 'Physics')">Physics</button>
+  <button class="tablinks" onclick="openCity(event, 'Biology')">Biology</button>
+  <button class="tablinks" onclick="openCity(event, 'Chemistry')">Chemistry</button>
+  <button class="tablinks" onclick="openCity(event, 'Geography')">Geography</button>
+  <button class="tablinks" onclick="openCity(event, 'History')">History</button>
+  <button class="tablinks" onclick="openCity(event, 'ChiHist')">中國歷史</button>
+  <button class="tablinks" onclick="openCity(event, 'Life-Ed')">生命教育</button>
+</div>
+
+<div id="Chinese" class="tabcontent">
+  <h3>中文</h3>
+  <p>[啟思] 啟思中國語文（第四版）</p>
+  <a href="file://K:/SS-Lib/Chinese/Textbooks/[啟思] 啟思中國語文（第四版）/">Open</a>
+</div>
+
+<div id="English" class="tabcontent">
+  <h3>English</h3>
+  <p>[Aristo] SS[B] Developing Skills for HKDSE</p> 
+  <a href="file://K:/SS-Lib/English/Exercises DSE/Aristo/SS[B] Developing Skills for HKDSE/">Open</a>
+  
+</div>
+
+<div id="Maths" class="tabcontent">
+  <h3>Mathematics</h3>
+  <p>PLM NSS Mathematics in Action 2ed (JSL)</p>
+</div>
+
+<div id="Physics" class="tabcontent">
+  <h3>Physics</h3>
+  <p>[Oxford] NSS Physics at Work (2ed)</p>
+  <a href="file:\\K:\SS-Lib\Physics\Textbooks DSE\[Oxford] NSS Physics at Work (2ed)">Open</a>
+  
+  
+  <p>Book 4 E&M</p>
+   <p style="margin-left: 40px"><a href="https://digital.oupchina.com.hk/dsephy/resources/b04_e/?lang=en&unit=1">Student's eResources</a> (video, simulators (for Windows PC), worksheets, weblinks, XR app, etc)</p>
+   
+   <p style="margin-left: 40px"><a href="https://www.youtube.com/playlist?list=PLuCqgTMIh49Ia3dC9Y_msvVgdy847PRl2">YouTube Channels</a> Experiments or Teaching video </p>
+</div>
+
+<div id="Biology" class="tabcontent">
+  <h3>Biology</h3>
+  <p>[Aristo] BCC Biology - Connecting Concepts HKDSE</p>
+</div>
+
+<div id="Chemistry" class="tabcontent">
+  <h3>Chemistry</h3>
+  <p>[Aristo] NMV New Chemistry - A Modern View HKDSE (2022)</p>
+  <a href="file://K:/SS-Lib/Chemistry/Textbooks DSE/[Aristo] NMV New Chemistry - A Modern View HKDSE (2022)/">Open</a>
+  <p>Useful: </p>
+  
+</div>
+
+<div id="Geography" class="tabcontent">
+  <h3>Geography</h3>
+  <p>雅集互動地理</p>
+  K:\SS-Lib\Geography\Textbooks\雅集互動地理
+</div>
+
+<div id="History" class="tabcontent">
+  <h3>History 世界史</h3>
+  <p>[齡記] 新漫遊世界史</p>
+  K:\SS-Lib\History\Textbooks\[齡記] 新漫遊世界史\S3 中三級
+</div>
+
+<div id="ChiHist" class="tabcontent">
+  <h3>Chinese History 中國歷史</h3>
+  <p>[HKEP]《活學中國歷史》2020</p>
+  Nil
+  <p>[雅集] 《新編中國史旅程》 2020</p>
+  K:\SS-Lib\中國歷史\Textbooks\[雅集] 《新編中國史旅程》 2020
+</div>
+
+
+<div id="Life-Ed" class="tabcontent">
+  <h3>Life Education 生命教育</h3>
+  <p>生命教育</p>
+  K:\SS-Lib\Life-Ed
+</div>
+
+<script>
+includeHTML();
+</script>
+
+<script>
+function openCity(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
 </body>
-</html>
+</html> 
+
+
+
